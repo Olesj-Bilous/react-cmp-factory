@@ -1,6 +1,6 @@
 type Selector<TRoot, TLeaf> = (root: TRoot) => TLeaf
 
-type VmSelector<TVm> = <TRoot, TModel>(root: TRoot, model: TModel) => TVm
+type VmSelector<TVm, TRoot, TModel> = (root: TRoot, model: TModel) => TVm
 
 type SelectorHook = <TRoot, TLeaf>(selector: Selector<TRoot, TLeaf>) => TLeaf
 
