@@ -10,3 +10,13 @@ type AnyRootedViewShell<TLeaf, TProps> = (selector: Selector<any, TLeaf>) => (pr
 
 type ComponentShell<TLeaf, TProps> = (hook: SelectorHook) => ViewShell<TLeaf, TProps>
 
+interface IComponentFactory<TRoot, TModel> {
+  createComponent(selector: Selector<TRoot, TModel>): (props: any) => JSX.Element;
+}
+
+interface IStateTools<TRoot, TLeaf> {
+  stateHook: SelectorHook,
+  selector: Selector<TRoot, TLeaf>
+}
+
+type Wayang<TVm, TProps> = <TRoot>(stateTools: IStateTools<TRoot, TVm>) => (props: TProps) => JSX.Element
