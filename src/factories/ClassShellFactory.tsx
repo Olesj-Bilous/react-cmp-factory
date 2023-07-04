@@ -1,4 +1,4 @@
-import { ComponentFactory } from "./ComponentFactory";
+
 
 export class ClassShellFactory<TRoot, TVm> {
   constructor(factories: ClassFactories<TRoot, TVm>) {

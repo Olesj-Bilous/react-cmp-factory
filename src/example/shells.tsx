@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 
-
 const stringShell: ComponentShell<string, NoReactProps> = function <TRoot>(stateTools: IStateTools<TRoot, string>) {
   return function StringComponent() {
     const state = stateTools.stateHook(stateTools.selector);
@@ -19,7 +18,7 @@ const booleanInputShell: ComponentShell<boolean, NoReactProps> = function <TRoot
   return function BooleanInput() {
     const state = stateTools.stateHook(stateTools.selector);
     const dispatch = useDispatch();
-    return <input type="checkbox" checked={state} onChange={() => dispatch({ type: 'example/toggleEdit', payLoad: null })} />
+    return <input type="checkbox" checked={state} onChange={() => dispatch({ type: 'example/togglePropertyEdit', payload: 'well' })} />
   }
 }
 

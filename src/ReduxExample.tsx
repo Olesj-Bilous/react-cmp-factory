@@ -1,21 +1,7 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
-import { ExampleVm, Example } from "./example/redux/exampleFactories";
-
-const slice = createSlice({
-  name: 'example',
-  initialState: { well: 'well', wellWell: 'well well', edit: false },
-  reducers: {
-    toggleEdit(state, action) {
-      state.edit = !state.edit;
-    }
-  }
-});
-
-const reduxStore = configureStore<ExampleVm>({
-  reducer: slice.reducer
-})
+import { Example } from "./example/redux/exampleFactories";
+import { reduxStore } from "./example/redux/exampleStore";
 
 export const ReduxExample = () => (
   <Provider store={reduxStore}>
